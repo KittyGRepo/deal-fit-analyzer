@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deal-fit-analyzer"
+version = "0.1.0"
+description = "Build an acquirer's strategy profile and target criteria from its public SEC filings."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = ["anthropic>=0.40", "requests>=2.31", "beautifulsoup4>=4.12"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+web = ["streamlit>=1.40", "streamlit-searchbox>=0.1.20"]
+
+[project.scripts]
+deal-fit = "deal_fit.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

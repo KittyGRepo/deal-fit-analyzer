@@ -1,0 +1,3 @@
+streamlit>=1.40
+streamlit-searchbox>=0.1.20
+.
